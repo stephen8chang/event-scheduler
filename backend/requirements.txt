@@ -1,0 +1,7 @@
+fastapi==0.95.2
+uvicorn==0.23.0
+sqlalchemy==2.0.0  # If you're using SQLAlchemy for database interactions
+asyncpg==0.26.0
+pydantic==1.10.0  # FastAPI uses Pydantic for data validation
+asyncpg==0.26.0  # If you're using asyncpg with PostgreSQL
+python-dotenv==0.21.0  # If you're using .env files for environment variables
