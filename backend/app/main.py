@@ -10,7 +10,6 @@ Base.metadata.create_all(bind=engine)
 logging.basicConfig(level=logging.DEBUG)
 app = FastAPI()
 
-# 👇 ADD THIS CORS configuration
 origins = [
     "http://localhost:5173",  # Frontend dev server
 ]
