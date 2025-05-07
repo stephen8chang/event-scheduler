@@ -5,10 +5,18 @@ import { ADD_EVENT } from "../graphql/mutations";
 const EventForm = () => {
     const [title, setTitle] = useState("")
     const [addEvent] = useMutation(ADD_EVENT)
+    const currentTime = new Date().toISOString();
 
-    const handleSubmit = async (e: React.FormEvent) => {
+    const handleSubmit = async (e) => {
         e.preventDefault()
-        await addEvent({ variables: {input: {title}}})
+        await addEvent({ 
+            variables: {
+                input: {
+                    title,
+                    start_time: currentTime
+                }
+            }
+        })
         setTitle("")
     };
 

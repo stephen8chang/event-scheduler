@@ -10,7 +10,7 @@ function App() {
     return (
         <ApolloProvider client={client}>
             <div className="max-w-xl mx-auto mt-10">
-                <h1 className="text-2xl font-bold mb-4">Team Scheduler</h1>
+                <h1 className="text-2xl font-bold mb-4">Event Scheduler</h1>
                 <Login></Login>
                 <CalendarEvents></CalendarEvents>
                 <EventForm></EventForm>
