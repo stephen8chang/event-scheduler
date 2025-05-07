@@ -1,10 +1,14 @@
 import React, { useState } from "react";
 import { useMutation } from "@apollo/client"; 
 import { ADD_EVENT } from "../graphql/mutations";
+import { GET_EVENTS } from "../graphql/queries";
 
 const EventForm = () => {
     const [title, setTitle] = useState("")
-    const [addEvent] = useMutation(ADD_EVENT)
+    const [addEvent] = useMutation(ADD_EVENT, {
+        refetchQueries: [{query: GET_EVENTS}],
+        awaitRefetchQueries: true,
+    })
     const currentTime = new Date().toISOString();
 
     const handleSubmit = async (e) => {
